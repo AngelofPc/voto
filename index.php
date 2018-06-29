@@ -6,5 +6,10 @@
  * Time: 7:00 PM
  */
 ?>
+<?php include('includes/head.php') ?>
+
+</body>
+
+</html>
 
 
