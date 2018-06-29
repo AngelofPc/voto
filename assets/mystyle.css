@@ -1,0 +1,198 @@
+html,body{
+
+
+}
+
+#j-list li{
+  display: inline;
+  padding-left: 70px;
+
+}
+
+
+.j-navbar{
+  position: relative;
+  top: 30px;
+}
+
+.j-logo{
+
+}
+.revity{
+  background-color: rgba(255, 255, 255, 0.0);
+top: 6px;
+height: auto;
+width: auto;
+position: relative;
+margin: 0;
+font-family: "Lato", Helvetica, Arial, serif;
+font-weight: 700;
+font-style: normal;
+font-size: 18.0px;
+color: rgba(0, 0, 0, 1.0);
+text-align: center;
+line-height: 22.0px;
+}
+
+ #j-list{
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+}
+#j-list li{
+  padding-right: 40px;
+
+}
+.j-list-2 li{
+  padding-top: 40px;
+  list-style-type: none;
+  text-align: center;
+
+}
+
+.j-intro{
+  text-align: left;
+  position: relative;
+  top: 90px;
+
+  /*left: 59px;*/
+}
+.intro-revity-para{
+    background-color: rgba(255, 255, 255, 0.0);
+    height: auto;
+    font-family: "Lato", Helvetica, Arial, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(9, 9, 9, 1.0);
+    line-height: 34.0px;
+}
+
+
+.intro-revity-head{
+  background-color: rgba(255, 255, 255, 0.0);
+  padding-bottom: 22px;
+    height: auto;
+    margin: 0;
+    font-family: "Lato-Semibold", Helvetica, Arial, serif;
+    font-size: 42.0px;
+    color: rgba(0, 0, 0, 1.0);
+
+    line-height: 50.0px;
+}
+
+.first-img{
+  max-width: 100%;
+  position: relative;top: 90px;
+}
+
+.second-section{
+    background-color: rgba(252, 252, 252, 1.0);
+    height: auto;
+    max-width: 100%;
+    position: relative;
+    margin-top: 260px;
+
+}
+.intro-2{
+    background-color: rgba(255, 255, 255, 0.0);
+    margin-top: 30px;
+    height: auto;
+
+    font-family: "Lato-Semibold", Helvetica, Arial, serif;
+    font-size: 32.0px;
+    color: rgba(0, 0, 0, 1.0);
+    text-align: center;
+    line-height: 39.0px;
+}
+.intro-2-para{
+  background-color: rgba(255, 255, 255, 0.0);
+
+height: auto;
+font-family: "Lato", Helvetica, Arial, serif;
+font-weight: 400;
+font-style: normal;
+font-size: 20.0px;
+color: rgba(9, 9, 9, 1.0);
+text-align: center;
+line-height: 34.0px;
+margin-bottom: 50px;
+}
+.third-section{
+background-color: rgba(51, 79, 142, 1.0);
+height: auto;
+max-width: 100%;
+margin-top: 30px;
+left: 0px;
+}
+.thirdh{
+      background-color: rgba(255, 255, 255, 0.0);
+      height: auto;
+      padding-top: 70px;
+      font-family: "Lato-Semibold", Helvetica, Arial, serif;
+      font-size: 32.0px;
+      color: rgba(255, 255, 255, 1.0);
+      text-align: center;
+      line-height: 39.0px;
+}
+.thirdp{
+background-color: rgba(255, 255, 255, 0.0);
+height: auto;
+margin-top: 25px;
+left: 356px;
+width : 55%;
+font-family: "Lato", Helvetica, Arial, serif;
+font-weight: 400;
+font-style: normal;
+font-size: 20.0px;
+color: rgba(255, 255, 255, 1.0);
+text-align: center;
+line-height: 34.0px;
+}
+
+.overlay-back{
+  position: absolute;
+  top: 0; width : 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.63;
+  filter : alpha(opacity = 60);
+  z-index: 5;
+  display: none;
+}
+
+  .blur {
+	-webkit-filter : blur(7px);
+	-moz-filter : blur(7px);
+	-ms-filter : blur(7px);
+	-o-filter: blur(7px);
+	filter: blur(7px);
+  z-index: -3 !important;
+	/*opacity: 0.2;*/
+
+}
+.overlay{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width : 100%;
+  height: 100%;
+  z-index: 10;
+
+}
+.j-label{
+  font-family: "Lato-Semibold", Helvetica, Arial, serif;
+    font-size: 18.0px;
+    color: rgba(0, 0, 0, 1.0);
+    text-align: center;
+    line-height: 22.0px;
+}
+.company-list li{
+  padding-top: 20px;
+  list-style-type: none;
+
+}
+.stages-list li {
+  list-style-type : none;
+  padding-top: 30px
+}
