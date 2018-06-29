@@ -1,58 +1,63 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: AngelofPc
- * Date: 6/29/2018
- * Time: 8:18 PM
- */
-?>
+
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- others -->
+      <title>Voto</title>
+        <link href="./img/favicon.png" rel="shortcut icon"/>
+        <meta charset="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/landing.css" rel="stylesheet" type="text/css"/>
+        <meta content="jurshsmith talcify" name="author">
+        </meta>
+        <!-- other metas end -->
 
-        <title>Voto</title>
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <script src="assets/js/bootstrap.js"></script>
+        <!-- script -->
+        <script type = "text/javascript" src = "assets/jquery.min.js"></script>
+        <script type = "text/javascript" src = "assets/bootstrap.min.js"></script>
+        <!-- end script -->
+
+        <!--css-->
+        <link rel = "stylesheet" href = "assets/mystyle.css">
+        <link rel = "stylesheet" href = "assets/bootstrap.min.css">
+        <!-- end css -->
+
     </head>
-
-<body>
-
-<div class = "sections j-navbar">
-	<div class = "row">
-		<div class = "col-sm-3">
-<img src = "images/voto.png" style = "height: 50px;max-width: 100%">
-		</div>
-		<div class = "col-sm-3"></div>
-		<div class = "col-sm-6">
-<ul class = "j-list">
-
-<li>About</li>
-<li>Get Started</li>
-<li>Sign In</li>
+  <body>
 
 
-</ul>
-		</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li> 
+        <li><a href="#">Page 3</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
-	</div>
+</body>
 
-</div>
+</html>
 
-<style>
-.j-navbar{
-	background-color: #eee;
-	padding: 40px;	
-}
-.j-list li{
-	display: inline;
-	list-style-type: none;
-	padding-left: 0px;
 
-}
 
-</style>
+
+	
