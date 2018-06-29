@@ -4,6 +4,10 @@
  * User: AngelofPc
  * Date: 6/29/2018
  * Time: 7:41 PM
+ */
+
+include "includes/head.php";
+?>
  */?>
 <form action="register.php" method="post">
     <div class="form-group">
