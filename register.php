@@ -6,3 +6,5 @@
  * Time: 7:41 PM
  */
 
+include "includes/head.php";
+?>
