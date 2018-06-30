@@ -85,8 +85,10 @@ if(isset($_POST['submit'])) {
                     <input type="password" name="confirm" class="form-control" id="confirm">
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox" name="rememberMe"> Remember me</label>
+                    <label><input type="checkbox" name="rememberMe"> Remember me</label>  |
+                    Already a Member Login <a href="login.php">Here</a>
                 </div>
+
                 <button type="submit" class="btn btn-success" name="submit" value="<?= (isset($_POST['submit']));?>">Submit</button>
             </form>
             </div>
