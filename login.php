@@ -9,9 +9,9 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/voto/core/init.php';
 include "includes/head.php";
-$email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
+$email = stripslashes((isset($_POST['email']))?sanitize($_POST['email']):'');
 $email = trim($email);
-$password = ((isset($_POST['password']))?sanitize($_POST['password']):'');
+$password = stripslashes((isset($_POST['password']))?sanitize($_POST['password']):'');
 $password = trim($password);
 $errors = array();
 
@@ -51,6 +51,32 @@ if($_POST){
         $user_id = $user['id'];
         login($user_id);
     }
+    if(isset($_POST['rememberMe']))
+    {
+        setcookie('$email',$_POST['email'], time()+30*24*60*60); // 30 days
+        setcookie('$password', $_POST['password'],time()+30*24*60*60); // 30 days
+        $_SESSION['curemail']=$email;
+        $_SESSION['curpassword']=$password;
+
+        $user = $query->fetch_assoc();
+        $_SESSION['user_id'] = $user['user_id'];
+
+        header("Location:index.php");
+        exit;
+    }
+    else
+    {
+        $log1=11;
+        $_SESSION['log1'] = $log1;
+        $_SESSION['curemail']=$email;
+        $_SESSION['curpassword']=$password;
+
+        $user = $query->fetch_assoc();
+        $_SESSION['user_id'] = $user['user_id'];
+
+        header("Location:index.php");
+        exit;
+    }
 }
 ?>
 <div class="col-md-4"></div>
@@ -64,6 +90,10 @@ if($_POST){
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" class="form-control" value="<?= $password; ?>">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="rememberMe"> Remember me</label>  |
+            You don't have an account? Register <a href="register.php">Here</a>
         </div>
         <div class="form-group">
             <input type="submit" value="Login" class="btn btn-success">
