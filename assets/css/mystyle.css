@@ -196,3 +196,15 @@ line-height: 34.0px;
   list-style-type : none;
   padding-top: 30px
 }
+#login-form {
+    width: 30%;
+    height: 50%;
+    border: 5px inset blue;
+    border-bottom-style: outset;
+    border-radius: 15px;
+    box-shadow: 7px 8px 15px rgba(4, 0, 0, 0.9);
+    margin: 7.5% auto;
+    padding: 20px;
+    color: darkblue;
+    background: rgba(0, 0, 0, 0.10);
+}

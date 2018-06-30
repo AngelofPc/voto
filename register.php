@@ -7,7 +7,6 @@
  */
 include "core/init.php";
 include "includes/head.php";
-if(isset($_POST['submit'])) {
     $name = ((isset($_POST['name'])) ? sanitize($_POST['name']) : '');
     if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
         $errors[] = 'Only Letters and whitespaces are allowed';
@@ -18,48 +17,56 @@ if(isset($_POST['submit'])) {
     }
     $password = ((isset($_POST['password'])) ? sanitize($_POST['password']) : '');
     $confirm = ((isset($_POST['confirm'])) ? sanitize($_POST['confirm']) : '');
+    $checkbox = ((isset($_POST['rememberMe']))? sanitize($_POST['rememberMe']): '');
 
-    if ($_POST) {
+    if(isset($_POST)) {
         $emailQuery = $db->query("SELECT * FROM users WHERE email = '$email'");
         $emailCount = mysqli_num_rows($emailQuery);
+
+        if(isset($_POST['rememberMe'])){
+            setcookie($email,$password, time() + (86400 * 30),"/");
+        }
 
         if ($emailCount != 0) {
             $errors[] = 'That email already exist in our database.';
         }
-
-        $required = array("name", "email", "password");
-        foreach ($required as $r) {
-            if (empty($_POST[$r])) {
-                $errors[] = 'You must fill out all fields';
+        $required = array('name', 'email', 'password', 'confirm');
+        foreach ($required as $f) {
+            if (empty($_POST[$f])) {
+                $errors[] = 'You must fill out all fields.';
                 break;
             }
         }
         if (strlen($password) < 6) {
-            $errors[] = 'Your password must be at least 6 characters';
+            $errors[] = 'Your password must be at least 6 characters.';
         }
 
         if ($password != $confirm) {
             $errors[] = 'Your password do not match';
         }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'You must enter a valid email';
-        }
-
         if (!empty($errors)) {
-            echo displa_errors($errors);
+            echo display_errors($errors);
         } else {
-            if (isset($_POST['submit'])) {
+            if(isset($_POST['submit'])) {
                 $hashed = password_hash($password, PASSWORD_DEFAULT);
-                $db->query = ("INSERT INTO users (name,email,password) VALUES('$name','$email','$password')");
+                $userQuery = $db->query("INSERT INTO users (`name`,`email`,`password`) VALUES ('$name','$email','$hashed')");
+                if ($userQuery) {
+                    $_SESSION['success_flash'] = "YOUR REGISTRATION IS COMPLETED...";
+                }
             }
         }
     }
-}
-    ?>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
+
+
+
+
+?>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form action="register.php" method="post">
                 <label for="name">Full Name:</label>
                 <input type="text" name="name" class="form-control" id="name">
 
@@ -72,15 +79,15 @@ if(isset($_POST['submit'])) {
                     <input type="password" name="password" class="form-control" id="password">
                 </div>
                 <div class="form-group">
-                    <label for="confirm">Password:</label>
+                    <label for="confirm">Confirm Password:</label>
                     <input type="password" name="confirm" class="form-control" id="confirm">
                 </div>
-                <!--<div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
-                </div>-->
-                <button type="submit" class="btn btn-success">Submit</button>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="rememberMe"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-success" name="submit" value="<?= (isset($_POST['submit']));?>">Submit</button>
+            </form>
             </div>
-
             <div class="col-md-4"></div>
         </div>
     </div>
