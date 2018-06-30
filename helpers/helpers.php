@@ -22,12 +22,18 @@ function display_success($success)
     $displays .= '</ul>';
     return $displays;
 }
+
+
+function pretty_date($date){
+    return date("M d - Y h:i A",strtotime($date));
+}
 function sanitize($dirty){
     return htmlentities($dirty, ENT_QUOTES, "UTF-8");
 }
 
 function login($user_id){
     $_SESSION['SBUser'] = $user_id;
+
     global $db;
 //    $date = date("Y-m-d H:i:s");
 //    $db->query("UPDATE users SET last_login = '$date' WHERE id = '$user_id'");

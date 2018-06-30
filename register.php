@@ -7,6 +7,8 @@
  */
 include "core/init.php";
 include "includes/head.php";
+include "includes/nav.php";
+if(isset($_POST['submit'])) {
     $name = ((isset($_POST['name'])) ? sanitize($_POST['name']) : '');
     if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
         $errors[] = 'Only Letters and whitespaces are allowed';
@@ -17,14 +19,14 @@ include "includes/head.php";
     }
     $password = ((isset($_POST['password'])) ? sanitize($_POST['password']) : '');
     $confirm = ((isset($_POST['confirm'])) ? sanitize($_POST['confirm']) : '');
-    $checkbox = ((isset($_POST['rememberMe']))? sanitize($_POST['rememberMe']): '');
+    $checkbox = ((isset($_POST['rememberMe'])) ? sanitize($_POST['rememberMe']) : '');
 
-    if(isset($_POST)) {
+    if (isset($_POST)) {
         $emailQuery = $db->query("SELECT * FROM users WHERE email = '$email'");
         $emailCount = mysqli_num_rows($emailQuery);
 
-        if(isset($_POST['rememberMe'])){
-            setcookie($email,$password, time() + (86400 * 30),"/");
+        if (isset($_POST['rememberMe'])) {
+            setcookie($email, $password, time() + (86400 * 30), "/");
         }
 
         if ($emailCount != 0) {
@@ -47,7 +49,7 @@ include "includes/head.php";
         if (!empty($errors)) {
             echo display_errors($errors);
         } else {
-            if(isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) {
                 $hashed = password_hash($password, PASSWORD_DEFAULT);
                 $userQuery = $db->query("INSERT INTO users (`name`,`email`,`password`) VALUES ('$name','$email','$hashed')");
                 if ($userQuery) {
@@ -58,7 +60,7 @@ include "includes/head.php";
     }
 
 
-
+}
 
 ?>
 <br>
